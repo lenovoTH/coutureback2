@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\ArticleVente;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,9 +18,13 @@ class ArticleVenteResource extends JsonResource
             'libelle' => $this->libelle,
             'quantiteStock' => $this->quantiteStock,
             'prix' => $this->prix,
+            'cout' => $this->cout,
+            'marge' => $this->marge,
+            'promo' => $this->promo,
             'reference' => $this->reference,
             'photo' => $this->photo,
-            'categorie_id' => $this->categorie_id,
+            'categorie' => new CategorieResource($this->categorie),
+            'articleConfection' =>ArticleConfectionResource::collection($this->articleconfections),
         ];
     }
 }

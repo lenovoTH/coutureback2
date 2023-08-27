@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ArticleVente extends Model
 {
@@ -15,13 +16,8 @@ class ArticleVente extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'libelle',
-        'quantiteStock',
-        'prix',
-        'reference',
-        'photo',
-        'categorie_id',
+    protected $guarded = [
+        'id'
     ];
 
     /**
@@ -40,5 +36,8 @@ class ArticleVente extends Model
         return $this->belongsTo(Categorie::class);
     }
 
-
+    public function articleconfections(): BelongsToMany
+    {
+        return $this->belongsToMany(ArticleConfection::class, 'article_vente_article_confections');
+    }
 }

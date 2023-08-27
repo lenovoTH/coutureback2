@@ -15,33 +15,33 @@ class VenteSeeder extends Seeder
     {
         $artventes = [
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'robe',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
                 'cout' => 10,
                 'marge' => 10,
                 'promo' => 10
             ],
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'jupe',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
                 'cout' => 10,
                 'marge' => 10,
                 'promo' => 10
             ],
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'costume',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
                 'cout' => 10,
                 'marge' => 10,

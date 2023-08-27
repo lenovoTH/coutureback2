@@ -38,7 +38,6 @@ class ArticleFournisseur extends Model
         return $this->belongsTo(Fournisseur::class);
     }
 
-
     public function articleConfection(): BelongsTo
     {
         return $this->belongsTo(ArticleConfection::class);

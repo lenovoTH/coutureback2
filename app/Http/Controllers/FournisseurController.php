@@ -15,8 +15,7 @@ class FournisseurController extends Controller
     public function index(Request $request)
     {
         $fournisseurs = Fournisseur::all();
-
-        return new FournisseurCollection($fournisseurs);
+        return new FournisseurResource($fournisseurs);
     }
 
     public function store(FournisseurStoreRequest $request)

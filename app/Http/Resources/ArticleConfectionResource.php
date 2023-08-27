@@ -3,6 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\CategorieResource;
+use App\Http\Resources\FournisseurResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ArticleConfectionResource extends JsonResource
@@ -19,7 +21,9 @@ class ArticleConfectionResource extends JsonResource
             'prix' => $this->prix,
             'reference' => $this->reference,
             'photo' => $this->photo,
-            'categorie_id' => $this->categorie_id,
+            'categorie' => new CategorieResource($this->categorie),
+            'fournisseurs' => FournisseurResource::collection($this->fournisseurs),
         ];
     }
 }
+

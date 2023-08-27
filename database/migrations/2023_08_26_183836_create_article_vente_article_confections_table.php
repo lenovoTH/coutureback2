@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\ArticleConfection;
+use App\Models\ArticleVente;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('vente_confections', function (Blueprint $table) {
+        Schema::create('article_vente_article_confections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vente_id')->constrained('article_ventes');
-            $table->foreignId('article_confection_id')->constrained();
+            $table->foreignIdFor(ArticleVente::class)->constrained();
+            $table->foreignIdFor(ArticleConfection::class)->constrained();
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vente_confections');
+        Schema::dropIfExists('article_vente_article_confections');
     }
 };

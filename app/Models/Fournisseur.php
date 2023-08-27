@@ -26,4 +26,9 @@ class Fournisseur extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function articleFournisseurs()
+    {
+        return $this->hasMany(ArticleFournisseur::class);
+    }
 }

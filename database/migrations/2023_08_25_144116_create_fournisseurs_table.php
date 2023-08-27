@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
             $table->string('libelle', 255)->unique();
+            $table->softDeletes();
             $table->timestamps();
         });
 

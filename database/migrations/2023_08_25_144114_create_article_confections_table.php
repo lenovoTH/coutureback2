@@ -19,8 +19,9 @@ return new class extends Migration
             $table->integer('quantiteStock');
             $table->float('prix');
             $table->string('reference', 255);
-            $table->binary('photo');
+            $table->binary('photo')->nullable();
             $table->foreignId('categorie_id')->constrained('categories');
+            $table->softDeletes();
             $table->timestamps();
         });
 

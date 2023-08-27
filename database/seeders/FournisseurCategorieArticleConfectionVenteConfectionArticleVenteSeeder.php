@@ -12,6 +12,6 @@ class FournisseurCategorieArticleConfectionVenteConfectionArticleVenteSeeder ext
      */
     public function run(): void
     {
-        FournisseurCategorieArticleConfectionVenteConfectionArticleVente::factory()->count(5)->create();
+        // FournisseurCategorieArticleConfectionVenteConfectionArticleVente::factory()->count(5)->create();
     }
 }

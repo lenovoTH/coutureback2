@@ -15,18 +15,18 @@ return new class extends Migration
 
         Schema::create('article_ventes', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle', 255);
-            $table->integer('quantiteStock');
+            $table->string('libelle', 255)->unique();
+            $table->integer('quantiteStock')->nullable();
             $table->float('prix');
             $table->float('cout');
             $table->float('marge')->nullable();
             $table->float('promo')->nullable();
             $table->string('reference', 255);
-            $table->binary('photo');
+            $table->binary('photo')->nullable();
             $table->foreignId('categorie_id')->constrained('categories');
+            $table->softDeletes();
             $table->timestamps();
         });
-
         Schema::enableForeignKeyConstraints();
     }
 

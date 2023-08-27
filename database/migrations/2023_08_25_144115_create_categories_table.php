@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('libelle', 255)->unique();
+            $table->enum('type', ['article de vente', 'article de confection']);
+            $table->softDeletes();
             $table->timestamps();
         });
 

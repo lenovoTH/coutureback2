@@ -15,27 +15,27 @@ class ConfectionSeeder extends Seeder
     {
         $artconfs = [
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'boutton',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
             ],
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'fil',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
             ],
             [
-                'libelle' => 'article de vente',
+                'libelle' => 'tissu',
                 'quantiteStock' => 10,
                 'prix' => 10,
                 'reference' => '123',
-                'photo' => '',
+                // 'photo' => '',
                 'categorie_id' => 1,
             ],
         ];
